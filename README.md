@@ -49,8 +49,13 @@ The system contained a very specific set of dependencies. Therefore the majority
 
 ---
 
-## Placeholder for ADAPter Code
-Maybe write some details on how it could be used on a different system or introduce some of the key portions?
+## ADAPter
+This is the system we introduced as part of our work in power-efficient inference. The design is already described in the report. Here we'll show how to run the `ADAPter`.
+- First add the models to the model repository of triton server and add the config file for it. Use netron to visualize the weights file and describe the file format and inputs and outputs of the model in the config file. Refer other `config.pbtxt` files to know the fields to include. We recommend using the trt backend (convert `onnx` models to `plan` format) with quantization since that will really speed up inference and get you the best performance on the Jetson device. But choose your poison.
+- Run the triton inference server using `tritonserver --model-repository=<PATH TO MODEL REPO> --backend-directory=<PATH TO BACKEND> --backend-config=tensorrt,version=8 --allow-gpu-metrics true`
+- Modify the endpoint based on which you plan to inference with. Change the constants based on how much smoothing is desirable. More smoothing will allow `ADAPter` to settle better but react slowly to sudden changes. Currently we support only one endpoint (this is by design since we want a homogenous stream of jobs) but its simple enough to add different endpoints on different listener threads with a few code tweaks. Start the queue server aka `ADAPter` with `sudo python queue_server.py`.
+- Tweak `send_requests.py` to send preprocessed payload data to `ADAPter` based on the endpoint you'll be hitting.
+- Use the tegrastats utility for monitoring system stats.
 
 ---
 
@@ -67,7 +72,7 @@ We also wrote a bash script, `tegrastats-parse.sh`, that wraps `tgparse.py` and 
 $ ./tegrastats-tgparse.sh <interval_in_ms> <count> <output>
 ```
 
-Which runs the tegrastats utility for the specified count with the interval provided and generates the parsed csv to the output provided.
+Which runs the tegrastats utility for the specified count with the interval provided and generates the parsed csv to the output provided. Special shoutout to [SQLDataModel](https://pypi.org/project/SQLDataModel/) for their lightweight and performant library that helped us write the parser! It really was a godsend.
 
 ---
 
