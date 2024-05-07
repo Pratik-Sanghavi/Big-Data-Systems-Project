@@ -20,8 +20,14 @@ Project
    │   │   ├── payload.json
    │   │   └── serializedImage.txt
    │   ├── repeat-inference.sh
-   │   ├── tegrastats-tgparse.sh
-   │   └── tegra-helper.sh
+   │   ├── tegra-helper.sh
+   │   └── tegrastats-tgparse.sh
+   ├── docs
+   │   ├── ADAPter - Final Report.pdf
+   │   ├── ADAPter - Poster.pdf
+   │   ├── ADAPter - Poster.pptx
+   │   ├── Project Check-In.pdf
+   │   └── Project Introduction.pdf
    ├── power_utils
    │   └── monitor_metrics_tegra.c
    ├── queue_server.py
@@ -30,7 +36,7 @@ Project
    ├── send_request_gpt.py
    └── tgparse.py
 
-   4 directories, 17 files
+5 directories, 22 files
 ```
 
 ---
