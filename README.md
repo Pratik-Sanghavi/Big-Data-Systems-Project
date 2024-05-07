@@ -20,7 +20,7 @@ Project
    │   │   ├── payload.json
    │   │   └── serializedImage.txt
    │   ├── repeat-inference.sh
-   │   ├── run-tegrastats-tgparse.sh
+   │   ├── tegrastats-tgparse.sh
    │   └── tegra-helper.sh
    ├── power_utils
    │   └── monitor_metrics_tegra.c
@@ -36,7 +36,7 @@ Project
 ---
 
 ## Primary System
-The majority of this project's work was done on a UW-Madison machine, 128.105.102.4, running Ubunutu 18.04:
+The majority of this project's work was done on a UW-Madison machine, `128.105.102.4`, running Ubunutu 18.04:
 
 ```text
    Static hostname: nvidia-desktop
@@ -45,7 +45,7 @@ The majority of this project's work was done on a UW-Madison machine, 128.105.10
             Kernel: Linux 4.9.299-tegra
       Architecture: arm64
 ```
-Containing a very specific set of dependencies. Therefore the majority of the source code for this project may not be directly transferrable or usable across a broader set of host systems or devices. Those that may be useable or transferrable are detailed in the following sections. Special thank you to Minghao Yan for allowing us the use of his system and device, we hope we kept our part of the bargain and didn't change anything that would cause issues for you after we finished.
+The system contained a very specific set of dependencies. Therefore the majority of the source code for this project may not be directly transferrable or usable across a broader set of host systems or devices. Those that may be useable or transferrable are detailed in the following sections. Special thank you to Minghao Yan for allowing us the use of his system and device, we hope we kept our part of the bargain and didn't change anything that would cause issues for you after we finished.
 
 ---
 
