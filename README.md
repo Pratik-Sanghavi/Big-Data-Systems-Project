@@ -88,30 +88,44 @@ While all the members of ADAP's 11 feel everyone contributed in good faith, per 
 **Ante Tonkovic-Capin**
 - Provided emotional support to rest of the group when times were hard
 - System config, network and proxy configuration for project dependencies, parsing documentation
+- Scowled through NVIDIA related docs looking for gems
 - Created sections of Poster
 - Wrote sections of Final Report
-- Code and Process Documentation
-- `tgparse.py`
-- `tegrastats-tgparse.sh`
+- Worked on `tgparse.py` and `tegrastats-tgparse.sh`
 - Parsing data and generating plots
+- Worked on ADAPter code
 
 **Drishan Poovaya**
 - Provided emotional support to rest of the group when times were hard
 - System config, network and proxy configuration for project dependencies, parsing documentation
+- Scowled through NVIDIA related docs looking for gems
 - Created sections of Poster
 - Wrote sections of Final Report
+- Worked on `tgparse.py` and `tegrastats-tgparse.sh`
+- Parsing data and generating plots
+- Worked on ADAPter code
 
 **Ashu Kumar**
 - Provided emotional support to rest of the group when times were hard
 - System config, network and proxy configuration for project dependencies, parsing documentation
+- Scowled through NVIDIA related docs looking for gems
 - Created sections of Poster
 - Wrote sections of Final Report
+- Worked on `tgparse.py` and `tegrastats-tgparse.sh`
+- Parsing data and generating plots
+- Worked on ADAPter code
 
 **Pratik Sanghavi**
 - Provided emotional support to rest of the group when times were hard
 - System config, network and proxy configuration for project dependencies, parsing documentation
+- Scowled through NVIDIA related docs looking for gems
 - Created sections of Poster
 - Wrote sections of Final Report
+- Worked on `tgparse.py` and `tegrastats-tgparse.sh`
+- Parsing data and generating plots
+- Worked on ADAPter code
+
+Any similarity of contributions amongst team members is entirely intentional.
 
 ---
 
