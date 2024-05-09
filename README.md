@@ -20,8 +20,14 @@ Project
    │   │   ├── payload.json
    │   │   └── serializedImage.txt
    │   ├── repeat-inference.sh
-   │   ├── tegrastats-tgparse.sh
-   │   └── tegra-helper.sh
+   │   ├── tegra-helper.sh
+   │   └── tegrastats-tgparse.sh
+   ├── docs
+   │   ├── ADAPter - Final Report.pdf
+   │   ├── ADAPter - Poster.pdf
+   │   ├── ADAPter - Poster.pptx
+   │   ├── Project Check-In.pdf
+   │   └── Project Introduction.pdf
    ├── power_utils
    │   └── monitor_metrics_tegra.c
    ├── queue_server.py
@@ -30,7 +36,7 @@ Project
    ├── send_request_gpt.py
    └── tgparse.py
 
-   4 directories, 17 files
+5 directories, 22 files
 ```
 
 ---
@@ -51,7 +57,7 @@ The system contained a very specific set of dependencies. Therefore the majority
 
 ## ADAPter
 This is the system we introduced as part of our work in power-efficient inference. The design is already described in the report. Here we'll show how to run the `ADAPter`.
-- First add the models to the model repository of triton server and add the config file for it. Use netron to visualize the weights file and describe the file format and inputs and outputs of the model in the config file. Refer other `config.pbtxt` files to know the fields to include. We recommend using the trt backend (convert `onnx` models to `plan` format) with quantization since that will really speed up inference and get you the best performance on the Jetson device. But choose your poison.
+- First add the models to the model repository of triton server and add the config file for it. Use netron to visualize the weights file and describe the file format and inputs and outputs of the model in the config file. Refer other `config.pbtxt` files to know the fields to include. We recommend using the trt backend (convert `onnx` models to `plan` format) with quantization since that will really speed up inference and get you the best performance on the Jetson device.
 - Run the triton inference server using `tritonserver --model-repository=<PATH TO MODEL REPO> --backend-directory=<PATH TO BACKEND> --backend-config=tensorrt,version=8 --allow-gpu-metrics true`
 - Modify the endpoint based on which you plan to inference with. Change the constants based on how much smoothing is desirable. More smoothing will allow `ADAPter` to settle better but react slowly to sudden changes. Currently we support only one endpoint (this is by design since we want a homogenous stream of jobs) but its simple enough to add different endpoints on different listener threads with a few code tweaks. Start the queue server aka `ADAPter` with `sudo python queue_server.py`.
 - Tweak `send_requests.py` to send preprocessed payload data to `ADAPter` based on the endpoint you'll be hitting.
@@ -82,30 +88,44 @@ While all the members of ADAP's 11 feel everyone contributed in good faith, per 
 **Ante Tonkovic-Capin**
 - Provided emotional support to rest of the group when times were hard
 - System config, network and proxy configuration for project dependencies, parsing documentation
+- Scowled through NVIDIA related docs looking for gems
 - Created sections of Poster
 - Wrote sections of Final Report
-- Code and Process Documentation
-- `tgparse.py`
-- `tegrastats-tgparse.sh`
+- Worked on `tgparse.py` and `tegrastats-tgparse.sh`
 - Parsing data and generating plots
+- Worked on ADAPter code
 
 **Drishan Poovaya**
 - Provided emotional support to rest of the group when times were hard
 - System config, network and proxy configuration for project dependencies, parsing documentation
+- Scowled through NVIDIA related docs looking for gems
 - Created sections of Poster
 - Wrote sections of Final Report
+- Worked on `tgparse.py` and `tegrastats-tgparse.sh`
+- Parsing data and generating plots
+- Worked on ADAPter code
 
 **Ashu Kumar**
 - Provided emotional support to rest of the group when times were hard
 - System config, network and proxy configuration for project dependencies, parsing documentation
+- Scowled through NVIDIA related docs looking for gems
 - Created sections of Poster
 - Wrote sections of Final Report
+- Worked on `tgparse.py` and `tegrastats-tgparse.sh`
+- Parsing data and generating plots
+- Worked on ADAPter code
 
 **Pratik Sanghavi**
 - Provided emotional support to rest of the group when times were hard
 - System config, network and proxy configuration for project dependencies, parsing documentation
+- Scowled through NVIDIA related docs looking for gems
 - Created sections of Poster
 - Wrote sections of Final Report
+- Worked on `tgparse.py` and `tegrastats-tgparse.sh`
+- Parsing data and generating plots
+- Worked on ADAPter code
+
+Any similarity of contributions amongst team members is entirely intentional.
 
 ---
 
